@@ -1,0 +1,47 @@
+Somewhere in the early 2000s, Michael Feathers coined the mnemonic SOLID to describe the first 5 principles of OOD – in particular, class design. Each letter also has a 3-letter representation.
+
+The first five principles are principles of class design. They are:
+S  SRP	The Single Responsibility Principle	A class should have one, and only one, reason to change.
+O OCP	The Open Closed Principle	You should be able to extend a classes behavior, without modifying it.
+L  LSP	The Liskov Substitution Principle	Derived classes must be substitutable for their base classes.
+I  ISP	The Interface Segregation Principle	Make fine grained interfaces that are client specific.
+D DIP	The Dependency Inversion Principle	Depend on abstractions, not on concretions. (In the world of Java, that means relying on interfaces and not implementations.)
+
+What is Dependency Injection?
+
+Dependency in programming is an approach where a class uses specific functionalities of another class. So, for example, If you consider two classes A and B, and say that class A uses functionalities of class B, then its implied that class A has a dependency of class B. Now, if you are coding in Java then you must know that, you have to create an instance of class B before the objects are being used by class A.
+
+It mainly has three classes involved:
+
+Client Class: This is the dependent class and is dependent on the Service class.
+Service Class: This class provides a service to the client class.
+Injector Class: This class is responsible for injecting the service class object into the client class
+
+Inversion of Control
+As I have mentioned above Inversion of Control is a principle based on which, Dependency Injection is made.If I have to explain you in simpler terms, then consider an example, wherein you have the ability to cook. According to the IoC principle, you can invert the control, so instead of you cooking food, you can just directly order from outside, wherein you receive food at your doorstep. Thus the process of food delivered to you at your doorstep is called the Inversion of Control.
+
+Java components / classes should be as independent as possible of other Java classes. This increases the possibility to reuse these classes and to test them independently of other classes(Unit Testing). To decouple Java components from other Java components the dependency to a certain other class should get injected into them rather that the class itself creates / finds this object. A class A has a dependency to class B if class uses class B as a variable.
+
+If dependency injection is used then the class B is given to class A via
+
+the constructor of the class A - this is then called construction injection
+
+a setter - this is then called setter injection
+
+The general concept between dependency injection is called Inversion of Control.
+
+The Spring Framework is a very comprehensive framework. The fundamental functionality provided by the Spring Container is dependency injection. Spring provides a light-weight container, e.g. the Spring core container, for dependency injection (DI). This container lets you inject required objects into other objects. This results in a design in which the Java class are not hard-coupled. The injection in Spring is either done via setter injection of via construction injection. These classes which are managed by Spring must conform to the JavaBean standard. In the context of Spring classes are also referred to as beans or as Spring beans.
+
+
+A JavaBean is just a standard
+
+	All properties private (use getters/setters)
+	A public no-argument constructor
+	Implements Serializable.
+	
+That's it. It's just a convention.
+
+serializable objects can be written to streams, and hence files, object databases, anything really.
+
+Also, there is no syntactic difference between a JavaBean and another class -- a class is a JavaBean if it follows the standards.
+
